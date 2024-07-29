@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/component.css" rel="stylesheet">
+</head>
+<body>
+    <header class="module-info">
+        <div class="session-name">
+            <span>MD01</span>
+            <h1>Session 08 - Variable, Datatype, Operators</h1>
+        </div>
+        <div class="student-info">
+            <img src="./images/profile-ico.png">
+            <span>Lý Xuân Lâm</span>
+        </div>
+    </header>
+
+    <section class="container">
+        <section class="box">
+            <h1 class="box__header">Tính điểm trung bình</h1>
+
+            <form class="form">
+                <div class="text-input-group">
+                    <div>
+                        <label for="physics">Điểm vật lý</label>
+                        <input id="physics" class="text-input" type="number" />
+                    </div>
+                    <div>
+                        <label for="chemistry">Điểm hóa học</label>
+                        <input id="chemistry" class="text-input" type="number" />
+                    </div>
+                    <div>
+                        <label for="biology">Điểm sinh học</label>
+                        <input id="biology" class="text-input" type="number" />
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="reset" id="reset1-btn" class="neutral-btn btn">Reset</button>
+                    <button id="caculate-btn" class="primary-btn btn" type="button">Tính điểm</button>
+                </div>
+            </form>
+    
+            <div class="box__footer">
+                <ul>
+                    <li>Tổng điểm:<span id="total-score"></span></li>
+                    <li>Điểm trung bình:<span id="average-score"></span></li>
+                </ul>
+            </div>
+        </section>
+    
+        <section class="box">
+            <h1 class="box__header">Chuyển độ C sang độ F</h1>
+
+            <form class="form">
+                <div class="text-input-group">
+                    <div>
+                        <label for="celsius">Độ C (Celsius)</label>
+                        <input id="celsius" class="text-input" type="number" />
+                    </div>
+                    <div>
+                        <label for="fahrenheit">Độ F (Fahrenheit)</label>
+                        <input id="fahrenheit" class="text-input" type="number" disabled />
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="reset" id="reset-btn" class="neutral-btn btn">Reset</button>
+                    <button id="convert-tem-btn" class="primary-btn btn" type="button">Chuyển Đổi</button>
+                </div>
+            </form>
+        </section>
+    
+        <section class="box">
+            <h1 class="box__header">Tính diện tích, chu vi hình chữ nhật</h1>
+
+            <form class="form">
+                <div class="text-input-group">
+                    <div>
+                        <label for="rec-height">Chiều cao</label>
+                        <input id="rec-height" class="text-input" type="number" />
+                    </div>
+                    <div>
+                        <label for="rec-width">Chiều rộng</label>
+                        <input id="rec-width" class="text-input" type="number" />
+                    </div>
+                </div>
+
+                <p class="error-message"></p>
+
+                <div class="button-group">
+                    <button type="reset" id="reset3-btn" class="neutral-btn btn">Reset</button>
+                    <button id="rec-area-btn" class="primary-btn btn" type="button">Tính chu vi, diện tích</button>
+                </div>
+            </form>
+
+            <div class="box__footer">
+                <ul>
+                    <li>Chu vi:<span id="rec-perimeter"></span></li>
+                    <li>Diện tích:<span id="rec-area"></span></li>
+                </ul>
+            </div>
+        </section>
+
+    </section>
+    
+    
+    <script>
+
+        /*---------------------------- Tính điểm môn học ------------------------------------*/
+        totalCaculate= () => {
+            let physicsScore = document.getElementById("physics").value;
+            let chemistryScore = document.getElementById("chemistry").value;
+            let biologyScore = document.getElementById("biology").value;
+
+            let totalScore = Number(physicsScore) + Number(chemistryScore) + Number(biologyScore);
+
+            let averageScore = totalScore/3;
+
+            document.getElementById("total-score").innerHTML = totalScore;
+            document.getElementById("average-score").innerHTML = averageScore;
+        }
+
+        resetCaculate = () => {
+            document.getElementById("total-score").innerHTML = "";
+            document.getElementById("average-score").innerHTML = "";
+        } 
+
+        let totalCaculateBtn = document.getElementById("caculate-btn");
+        totalCaculateBtn.addEventListener("click", totalCaculate);
+
+        let resetBtn1 = document.getElementById("reset1-btn");
+        resetBtn1.addEventListener("click", resetCaculate);
+
+
+        /*----------------------------- Chuyển đổi độ C sang độ F -----------------------------------*/
+        convertTemperature = () => {
+            let c = document.getElementById("celsius").value;
+            let f = document.getElementById("fahrenheit");
+            
+            let cTof = (c*9/5) + 32;
+
+            f.value=cTof;
+        }
+
+        let convertTemBtn = document.getElementById("convert-tem-btn");
+        convertTemBtn.addEventListener("click", convertTemperature);
+
+
+        /*----------------------------- Tính chu vi, diện tích hình cn -----------------------------------*/
+        rectangleArea = () => {
+            let recHeight = document.getElementById("rec-height").value;
+            let recWidth = document.getElementById("rec-width").value;
+
+            if(recHeight>0 && recWidth >0){
+                let recPerimeter = (Number(recHeight)+Number(recWidth))*2
+                let recArea = recHeight*recWidth;
+
+                document.getElementById("rec-perimeter").innerHTML = recPerimeter;
+                document.getElementById("rec-area").innerHTML = recArea;
+                document.querySelector(".error-message").innerHTML ="";
+
+            }else{
+                document.querySelector(".error-message").innerHTML = "Chiều cao và chiều rộng phải lớn hơn 0";
+            }
+        } 
+
+        resetRec = () => {
+            document.getElementById("rec-perimeter").innerHTML = "";
+            document.getElementById("rec-area").innerHTML = "";
+            document.querySelector(".error-message").innerHTML ="";
+        }
+
+        let recAreaBtn = document.getElementById("rec-area-btn");
+        recAreaBtn.addEventListener("click", rectangleArea);
+
+        let resetBtn3 = document.getElementById("reset3-btn");
+        resetBtn3.addEventListener("click", resetRec);
+
+    </script>
+    <script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/component.css" rel="stylesheet">
+</head>
+<body>
+    <header class="module-info">
+        <div class="session-name">
+            <span>MD01</span>
+            <h1>Session 09 - Controls Statement</h1>
+        </div>
+        <div class="student-info">
+            <img src="./images/profile-ico.png">
+            <span>Lý Xuân Lâm</span>
+        </div>
+    </header>
+
+    <section class="container">
+        <section class="box">
+            <h1 class="box__header">Bạn sinh năm bao nhiêu?</h1>
+
+            <form class="form">
+                <div class="text-input-group">
+                    <div>
+                        <label for="physics">Năm sinh</label>
+                        <input id="physics" class="text-input" type="number" />
+                        <p class="error-message"></p>
+
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="reset" id="reset1-btn" class="neutral-btn btn">Reset</button>
+                    <button id="caculate-btn" class="primary-btn btn" type="button">confirm</button>
+                </div>
+            </form>
+        </section>
+
+    </section>
+    
+    <script src="./index.js"></script>
+</body>
+</html>
