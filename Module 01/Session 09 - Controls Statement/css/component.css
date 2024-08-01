@@ -1,93 +1,133 @@
 .module-info{
-    background-color: #fff;
-    padding:24px 64px;
-    margin-bottom: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.session-name{
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.session-name span{
-    padding: 8px 16px;
-    background-color: #E0E9FF;
-    border-radius: 100px;
-
-}
-
-.session-name h1{
-    font-size: 28px;
-}
-
-.student-info{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.student-info img{
-    margin-bottom: 2px;
-}
-
-.btn{
-    min-width: 96px;
-    height: 36px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-weight: 600;
-    color: #fff;
-    transition: all 0.2s;
-    padding:0 16px;
-}
-
-.primary-btn{
-    background-color: #3F69CF;
-}
-
-.primary-btn:hover{
-    background-color: #315CC4;
-}
-
-.secondary-btn{
-    background-color: transparent;
-    color: #335FCC;
-    border: 1px solid #335FCC;
-}
-
-.secondary-btn:hover{
-    background-color: #D6DFF5;
-}
-
-.neutral-btn{
-    color: #333;
-    background-color: #ececec;
-}
-
-.neutral-btn:hover{
-    background-color: #e7e5e5;
-}
-
-.text-input{
-    height: 36px;
-    border-radius: 3px;
-    padding: 0 16px;
-    border: 1px solid #ccc;
-}
-
-label{
-    display: block;
-    margin-bottom: 4px;
-    font-size: 15px;
-}
-
-.error-message{
-    margin-top: 8px;
-    font-size: 13px;
-    color: rgb(172, 10, 10);
-}
+        background-color: #fff;
+        padding:24px 64px;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .session-name{
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+    
+    .session-name span{
+        padding: 8px 16px;
+        background-color: #E0E9FF;
+        border-radius: 100px;
+    }
+    
+    .session-name h1{
+        font-size: 28px;
+    }
+    
+    .student-info{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .student-info img{
+        margin-bottom: 2px;
+    }
+    
+    .btn{
+        display: inline-block;
+        line-height: 36px;
+        min-width: 96px;
+        height: 36px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-weight: 600;
+        color: #fff;
+        transition: all 0.2s;
+        padding:0 16px;
+        text-decoration: none;
+    }
+    
+    .primary-btn{
+        background-color: #3F69CF;
+    }
+    
+    .primary-btn:hover{
+        background-color: #315CC4;
+    }
+    
+    .secondary-btn{
+        background-color: transparent;
+        color: #335FCC;
+        border: 1px solid #335FCC;
+    }
+    
+    .secondary-btn:hover{
+        background-color: #D6DFF5;
+    }
+    
+    .neutral-btn{
+        color: #333;
+        background-color: #ececec;
+    }
+    
+    .neutral-btn:hover{
+        background-color: #e7e5e5;
+    }
+    
+    .text-input{
+        height: 36px;
+        border-radius: 3px;
+        padding: 0 16px;
+        border: 1px solid #ccc;
+    }
+    
+    .text-input.error{
+        border-color: rgb(202, 20, 20);
+    }
+    
+    label{
+        display: block;
+        margin-bottom: 4px;
+        font-size: 15px;
+    }
+    
+    .message{
+        margin-top: 8px;
+        display: inline-block;
+        font-size: 13px;
+    }
+    
+    .message.error{
+        color: rgb(202, 20, 20);
+    }
+    
+    .message.info{
+        color: #315CC4;
+    }
+    
+    .box-success{
+        min-width: 500px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        background-color:#fff;
+        padding:40px;
+        border-radius: 8px;
+    }
+    
+    .box-success__message{
+        text-align: center;
+    }
+    
+    .box-success__message p{
+        margin-top: 8px;
+    }
+    
+    .box-success svg{
+       font-size: 40px;
+       color: #315CC4;
+    }
+    
