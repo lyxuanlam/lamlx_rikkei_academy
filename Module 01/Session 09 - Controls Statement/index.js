@@ -269,6 +269,11 @@ validateYear = () =>{
             message.classList.remove("error");
             message.classList.add("info");
             message.innerHTML = "FizzBuzz, chia hết cho 3 và 5 nha";
+        }else{
+            message.classList.remove("info");
+            number.classList.add("error");
+            message.classList.add("error");
+            message.innerHTML = "Số bạn nhập không chia hết cho 3 và 5";
         }
     }
     
@@ -308,6 +313,7 @@ validateYear = () =>{
         }
         else if(numberB.value == ""){
             numberA.classList.remove("error");
+            messageB.classList.remove("info");
             messageA.innerHTML = "";
             numberB.classList.add("error");
             messageB.classList.add("error");
