@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="./css/style.css" rel="stylesheet">
+  <link href="./css/component.css" rel="stylesheet">
+</head>
+<body>
+  <header class="module-info">
+    <div class="session-name">
+      <span>MD01</span>
+      <h1>Session 10 - Array</h1>
+    </div>
+    <div class="student-info">
+      <img src="./images/profile-ico.png">
+      <span>Lý Xuân Lâm</span>
+    </div>
+  </header>
+
+  <section class="container">
+    <section class="box">
+      <h1 class="box__header">Số nguyên trong mảng</h1>
+      <form class="form">
+        <div class="text-input-group">
+          <div>
+            <label for="value-1">Giá trị</label>
+            <input id="value-1" class="text-input" placeholder="Giá trị" />
+            <span class="message error"></span>
+            <span class="message info"></span>
+            <span class="message info"></span>
+          </div>
+        </div>
+        <div class="button-group">
+          <button id="reset-btn-1" class="neutral-btn btn" type="reset">Reset</button>
+          <button id="add-btn-1" class="primary-btn btn" type="button">Thêm giá trị vào mảng</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="box">
+      <h1 class="box__header">Tìm kiếm con vật trong mảng</h1>
+      <form class="form">
+        <div class="text-input-group">
+          <div>
+            <label for="animal-keyword">Từ khóa</label>
+            <input id="animal-keyword" class="text-input" placeholder="Nhập từ khóa cần tìm: Lion, Tiger..." />
+            <span class="message error"></span>
+            <span class="message info"></span>
+          </div>
+        </div>
+        <div class="button-group">
+          <button id="reset-btn-2" class="neutral-btn btn" type="reset">Reset</button>
+          <button id="search-btn" class="primary-btn btn" type="button">Tìm kiếm</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="box">
+      <h1 class="box__header">Đếm số lần xuất hiện của phần tử</h1>
+      <form class="form">
+        <div class="text-input-group">
+          <div>
+            <label for="number-1">Số</label>
+            <input id="number-1" class="text-input" type="number" placeholder="Nhập số" />
+            <span class="message">Mảng B gồm các số: 1, 2, 3, 4, 5</span>
+            <span class="message error"></span>
+            <span class="message info"></span>
+          </div>
+        </div>
+        <div class="button-group">
+          <button id="reset-btn-2" class="neutral-btn btn" type="reset">Reset</button>
+          <button id="confirm-btn-1" class="primary-btn btn" type="button">Confirm</button>
+        </div>
+      </form>
+    </section>
+  </section>
+
+  <script src="./index.js"></script>
+</body>
+</html>
