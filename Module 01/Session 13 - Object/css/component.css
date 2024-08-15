@@ -148,7 +148,7 @@
   }
   
   .empty-state svg{
-    font-size: 32px;
+    font-size: 36px;
     color: #777;
   }
   
@@ -156,4 +156,29 @@
     color: red;
     font-weight: bold;
     padding-left: 4px;
+  }
+
+  .icon-btn{
+    padding: 8px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .icon-btn svg{
+    font-size: 24px;
+    color: #555;
+  }
+  
+  
+  .icon-btn:hover{
+    padding: 8px;
+    background-color: #E0E0E0;
+    display: inline-block;
+    border-radius: 100px;
+  }
+  
+  .icon-btn:hover svg{
+    color: #333;
   }

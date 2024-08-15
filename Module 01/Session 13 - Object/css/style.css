@@ -98,13 +98,18 @@
     border-top: 1px solid #ccc;
     padding:8px 12px;
   }
+
+  table tr:hover{
+    background-color: #f7f7f7;
+  }
+
+  table tr:first-child:hover{
+    background-color: transparent;
+  }
+  
   
   table tr td:first-child, table tr th:first-child{
     border-left: none;
-    text-align: center;
-  }
-  
-  table tr td:last-child, table tr th:last-child{
     text-align: center;
   }
   
@@ -113,21 +118,7 @@
     color: #555;
   }
   
-  .remove-btn{
-    padding: 8px;
-    display: inline-block;
-    border-radius: 100px;
-    transition: all 0.2s;
-    cursor: pointer;
+  table .edit-column, table .remove-column{
+    text-align: center;
   }
-  
-  .remove-btn:hover{
-    padding: 8px;
-    background-color: #f1f1f1;
-    display: inline-block;
-    border-radius: 100px;
-  }
-  
-  .remove-btn:hover svg{
-    color: #333;
-  }
+ 

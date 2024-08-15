@@ -1,5 +1,4 @@
 //Bài 1
-
 const users = [];
 let errorMessage = document.querySelectorAll('.message.error')[0];
 
@@ -43,7 +42,6 @@ let resetButton = document.getElementById("reset-btn");
 resetButton.addEventListener("click", resetForm)
 
 getUser = () => {
-  if (!users.length) return
   let emptyState = document.querySelectorAll(".empty-state")[0];
   emptyState.classList.add("inactive");
   let table = document.getElementById("users-table");
@@ -56,8 +54,13 @@ getUser = () => {
       <td>${users[i].fullName}</td>
       <td>${users[i].email}</td>
       <td>${users[i].phoneNumber}</td>
+      <td class="edit-column">
+        <a class="icon-btn">
+          <svg width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m18.988 2.012l3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287l-3-3L8 13z"/><path fill="currentColor" d="M19 19H8.158c-.026 0-.053.01-.079.01c-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2z"/></svg>
+        </a>
+      </td>
       <td class="remove-column">
-        <a class="remove-btn" onclick="removeUser(${i})">
+        <a class="icon-btn" onclick="removeUser(${i})">
           <svg width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6z"/></svg>
         </a>
       </td>
@@ -66,17 +69,22 @@ getUser = () => {
 
   let tableHtml = `
     <table>
-      <tr>
+      <tr id="table-title">
         <th>STT</th>
         <th>Họ tên</th>
         <th>Email</th>
         <th>Số điện thoại</th>
-        <th>Xóa</th>
+        <th class="edit-column">Sửa</th>
+        <th class="remove-column">Xóa</th>
       </tr>
       ${trHTml}
     </table>`;
 
   table.innerHTML = tableHtml;
+  if (!users.length) {
+    document.getElementById("table-title").style.display = "none";
+    emptyState.classList.remove("inactive");
+  }
 }
 
 getUser();
@@ -92,6 +100,8 @@ isEmailExists = () => {
 }
 
 removeUser = (key) => {
+  console.log(key);
+  
   users.splice(key, 1);
   console.log(users);
   getUser();
