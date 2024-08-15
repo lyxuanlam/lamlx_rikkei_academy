@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="./css/style.css" rel="stylesheet">
+  <link href="./css/component.css" rel="stylesheet">
+</head>
+<body>
+  <header class="module-info">
+    <div class="session-name">
+      <span>MD01</span>
+      <h1>Session 13 - Object</h1>
+    </div>
+    <div class="student-info">
+      <img src="./images/profile-ico.png">
+      <span>Lý Xuân Lâm</span>
+    </div>
+  </header>
+
+  <section class="container">
+    <section class="box">
+      <h1 class="box__header">Lưu thông tin cá nhân vào Object</h1>
+      <form class="form">
+        <div class="text-input-group">
+          <div>
+            <label for="full-name">Họ tên<span class="required">*</span></label>
+            <input id="full-name" class="text-input" placeholder="Nhập tên bạn vào đây" />
+          </div>
+          <div>
+            <label for="email">Email<span class="required">*</span></label>
+            <input id="email" type="email" class="text-input" placeholder="Nhập email vào đây" />
+          </div>
+          <div>
+            <label for="phone-number">Số điện thoại</label>
+            <input id="phone-number" type="number" class="text-input" placeholder="Nhập số điện thoại vào đây" />
+          </div>
+        </div>
+
+        <span class="message error"></span>
+        <span class="message info"></span>
+
+        <div class="button-group">
+          <button id="reset-btn" class="neutral-btn btn" type="reset">Reset</button>
+          <button id="add-btn" class="primary-btn btn" type="button">Lưu thông tin</button>
+        </div>
+      </form>
+    </section>
+    <section class="box">
+      <div class="empty-state">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024"><path fill="currentColor" d="M854.6 288.7c6 6 9.4 14.1 9.4 22.6V928c0 17.7-14.3 32-32 32H192c-17.7 0-32-14.3-32-32V96c0-17.7 14.3-32 32-32h424.7c8.5 0 16.7 3.4 22.7 9.4zM790.2 326L602 137.8V326z"/></svg>
+        Không có thông tin cá nhân nào được lưu.
+      </div>
+      <div id="users-table"></div>
+    </section>
+  </section>
+ 
+  <script src="./index.js"></script>
+</body>
+</html>
