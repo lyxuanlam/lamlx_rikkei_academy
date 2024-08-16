@@ -1,0 +1,302 @@
+.module-info{
+    background-color: #fff;
+    padding:24px 64px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .session-name{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .session-name span{
+    padding: 8px 16px;
+    background-color: #E0E9FF;
+    border-radius: 100px;
+  }
+  
+  .session-name h1{
+    font-size: 28px;
+  }
+  
+  .student-info{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .student-info img{
+    margin-bottom: 2px;
+  }
+  
+  .btn{
+    display: inline-block;
+    line-height: 36px;
+    min-width: 96px;
+    height: 36px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: "main_medium";
+    color: #fff;
+    transition: all 0.2s;
+    padding:0 16px;
+    text-decoration: none;
+  }
+  
+  .primary-btn{
+    background-color: #3F69CF;
+  }
+  
+  .primary-btn:hover{
+    background-color: #315CC4;
+  }
+  
+  .primary-btn[disabled]{
+    color: #fff;
+    background-color: #D6DFF5;
+    cursor: default;
+  }
+  
+  .secondary-btn{
+    background-color: transparent;
+    color: #335FCC;
+    border: 1px solid #335FCC;
+  }
+  
+  .secondary-btn:hover{
+    background-color: #D6DFF5;
+  }
+  
+  .neutral-btn{
+    color: #333;
+    background-color: #ececec;
+  }
+  
+  .neutral-btn:hover{
+    background-color: #e7e5e5;
+  }
+  
+  .text-input{
+    height: 36px;
+    border-radius: 3px;
+    padding: 0 16px;
+    border: 1px solid #ccc;
+  }
+  
+  .text-input::placeholder{
+    color: #B3B7C1;
+    font-family: "main_regular";
+  }
+  
+  .text-input.error{
+    border-color: rgb(202, 20, 20);
+  }
+  
+  label{
+    display: block;
+    margin-bottom: 4px;
+    font-size: 15px;
+  }
+  
+  .message{
+    margin-top: 8px;
+    display: block;
+    font-size: 13px;
+  }
+  
+  .message.error{
+    color: rgb(202, 20, 20);
+  }
+  
+  .message.info{
+    color: #315CC4;
+  }
+  
+  .box-success{
+    min-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    background-color:#fff;
+    padding:40px;
+    border-radius: 8px;
+  }
+  
+  .box-success__message{
+    text-align: center;
+  }
+  
+  .box-success__message p{
+    margin-top: 8px;
+  }
+  
+  .box-success svg{
+   font-size: 40px;
+   color: #315CC4;
+  }
+  
+  .empty-state{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    color: #555;
+    font-size: 14px;
+  }
+  
+  .empty-state.inactive{
+    display: none;
+  }
+  
+  .empty-state svg{
+    font-size: 32px;
+    color: #777;
+  }
+  
+  .required {
+    color: red;
+    font-family: "main_medium";
+    padding-left: 4px;
+  }
+  
+  .icon-btn{
+    padding: 8px;
+    display: inline-flex;
+    border-radius: 100px;
+    transition: all 0.1s;
+    cursor: pointer;
+  }
+  
+  .icon-btn:hover{
+    background-color: #E0E0E0;
+  }
+  
+  .icon-btn svg{
+    font-size: 24px;
+    color: #555;
+  }
+  
+  .icon-btn:hover svg{
+    color: #333;
+  }
+  
+  .modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+  }
+  
+  .modal.active{
+    display: flex;
+  }
+  
+  .modal__overlay{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .modal__content{
+    position: relative;
+    padding: 4px 24px 24px 24px;
+    z-index: 1;
+    width: 500px;
+    background-color: #fff;
+    margin: auto;
+    border-radius: 8px;
+  }
+  
+  .modal__title{
+    padding:12px 0;
+    border-bottom: 1px solid #E5E5E5;
+    font-size: 18px;
+    font-family: "main_semibold";
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .modal__title .close-icon-btn{
+    padding: 8px;
+    display: flex;
+    border-radius: 100px;
+    transition: all 0.1s;
+  }
+  
+  .modal__title .close-icon-btn:hover{
+    background-color: #f1f1f1;
+  }
+  
+  .modal__title .close-icon-btn svg{
+    font-size: 20px;
+    color:#555;
+  }
+  
+  .modal__body{
+    padding-top: 24px;
+  }
+  
+  .toast {
+    position: absolute;
+    min-width: 400px;
+    top: 48px;
+    left: calc(50vw - 400px/2);
+    padding: 8px 8px 12px 16px;
+    background-color: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    border-radius: 5px;
+    border: 1px solid #f1f1f1;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-family: "main_semibold";
+    transition: all 0.2s;
+  }
+  
+  .toast.success {
+    color: #0d6efd;
+    border-left: 4px solid #0d6efd;
+  
+  }
+  
+  .toast.active{
+    display: inline-flex;
+  }
+  
+  .toast svg{
+    font-size: 24px;
+  }
+  
+  .toast span{
+   display: flex;
+   align-items: center;
+   gap: 8px;
+  }
+  
+  .toast__close-btn{
+    display: inline-flex;
+    padding: 4px;
+    border-radius: 100px;
+    color:#555;
+    transition: all 0.1s;
+  }
+  
+  .toast__close-btn:hover{
+    background-color: #f1f1f1;
+  }
