@@ -161,7 +161,6 @@ enabaleEditButton = (index) => {
   let fullName = document.getElementById("full-name-e").value;
   let phoneNumber = document.getElementById("phone-number-e").value;
   let editButton = document.getElementById("edit-btn");
-  console.log(users[index].phoneNumber);
   
   if(phoneNumber==users[index].phoneNumber && fullName==users[index].fullName){
     editButton.setAttribute("disabled","");
