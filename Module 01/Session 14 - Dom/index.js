@@ -19,10 +19,7 @@ addUser = () => {
   } else if (isEmailExists()) {
     errorMessage.innerHTML = "Đã tồn tại email trong hệ thống";
   } else {
-    if (phoneNumber == "") {
-      phoneNumber = "-";
-    }
-
+    
     errorMessage.innerHTML = "";
     let userInfo = new User(fullName, email, phoneNumber);
     users.push(userInfo);
@@ -45,14 +42,20 @@ getUser = () => {
   emptyState.classList.add("inactive");
   let table = document.getElementById("users-table");
   let trHTml = "";
+  let phoneNumber;
 
   for (let i = 0; i < users.length; i++) {
+    if(users[i].phoneNumber==""){
+      phoneNumber = "-";
+    }else{
+      phoneNumber = users[i].phoneNumber;
+    }
     trHTml += `
     <tr>
       <td>${i + 1}</td>
       <td>${users[i].fullName}</td>
       <td>${users[i].email}</td>
-      <td>${users[i].phoneNumber}</td>
+      <td>${phoneNumber}</td>
       <td class="edit-column">
         <a class="icon-btn" onclick="openEditModal(${i})">
           <svg width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m18.988 2.012l3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287l-3-3L8 13z"/><path fill="currentColor" d="M19 19H8.158c-.026 0-.053.01-.079.01c-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2z"/></svg>
@@ -129,17 +132,15 @@ updateUser = (index) => {
   let phoneNumber = document.getElementById("phone-number-e").value;
 
   users[index].fullName = fullName;
-  if(!phoneNumber){
-    users[index].phoneNumber = "-";
-  }else{
-    users[index].phoneNumber = phoneNumber;
-  }
+  users[index].phoneNumber = phoneNumber;
  
   closeModal();
   getUser();
 
   let toast = document.querySelector(".toast");
   toast.classList.add("active");
+
+  setTimeout(closeToast,3000);
 }
 
 closeModal = () => {
@@ -160,8 +161,9 @@ enabaleEditButton = (index) => {
   let fullName = document.getElementById("full-name-e").value;
   let phoneNumber = document.getElementById("phone-number-e").value;
   let editButton = document.getElementById("edit-btn");
-
-  if(fullName==users[index].fullName){
+  console.log(users[index].phoneNumber);
+  
+  if(phoneNumber==users[index].phoneNumber && fullName==users[index].fullName){
     editButton.setAttribute("disabled","");
   }else{
     editButton.removeAttribute("disabled");

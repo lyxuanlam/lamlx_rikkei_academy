@@ -197,6 +197,7 @@
     bottom: 0;
     left: 0;
     display: none;
+    animation:fadeIn 0.3s;
   }
   
   .modal.active{
@@ -219,6 +220,7 @@
     background-color: #fff;
     margin: auto;
     border-radius: 8px;
+    animation:zoomIn 0.3s;
   }
   
   .modal__title{
@@ -267,6 +269,7 @@
     font-size: 14px;
     font-family: "main_semibold";
     transition: all 0.2s;
+    animation: slideToBottom 0.5s;
   }
   
   .toast.success {
