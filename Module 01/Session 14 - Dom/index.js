@@ -103,8 +103,13 @@ isEmailExists = () => {
 }
 
 removeUser = (index) => {
-  users.splice(index, 1);
-  getUser();
+  let userConfirm = confirm("Bạn chắc chắn muốn xóa thông tin này?");
+  if(!userConfirm){
+    return;
+  }else{
+    users.splice(index, 1);
+    getUser();
+  }
 }
 
 //Sửa thông tin modal

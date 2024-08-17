@@ -1,3 +1,8 @@
+:root{
+  --primary: #3F69CF;
+}
+
+
 .module-info{
     background-color: #fff;
     padding:24px 64px;
@@ -49,11 +54,11 @@
   }
   
   .primary-btn{
-    background-color: #3F69CF;
+    background-color: var(--primary);
   }
   
   .primary-btn:hover{
-    background-color: #315CC4;
+    background-color: var(--primary);
   }
   
   .primary-btn[disabled]{
@@ -65,7 +70,7 @@
   .secondary-btn{
     background-color: transparent;
     color: #335FCC;
-    border: 1px solid #335FCC;
+    border: 1px solid var(--primary);
   }
   
   .secondary-btn:hover{
@@ -114,7 +119,7 @@
   }
   
   .message.info{
-    color: #315CC4;
+    color: var(--primary);
   }
   
   .box-success{
@@ -139,7 +144,7 @@
   
   .box-success svg{
    font-size: 40px;
-   color: #315CC4;
+   color: var(--primary);
   }
   
   .empty-state{
@@ -258,7 +263,7 @@
     min-width: 400px;
     top: 48px;
     left: calc(50vw - 400px/2);
-    padding: 8px 8px 12px 16px;
+    padding: 12px 8px 16px 16px;
     background-color: #fff;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
     border-radius: 5px;
@@ -269,17 +274,21 @@
     font-size: 14px;
     font-family: "main_semibold";
     transition: all 0.2s;
-    animation: slideToBottom 0.5s;
+  }
+
+  .toast.inactive{
+    animation: slideToTop 0.5s;
   }
   
   .toast.success {
-    color: #0d6efd;
-    border-left: 4px solid #0d6efd;
+    color: var(--primary);
+    border-left: 4px solid var(--primary);
   
   }
   
   .toast.active{
     display: inline-flex;
+    animation: slideToBottom 0.5s;
   }
   
   .toast svg{
