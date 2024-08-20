@@ -1,0 +1,20 @@
+@font-face {
+      font-family: 'main_bold';
+      src:url(../fonts/SVN-Poppins-Bold.ttf);
+    }
+    
+    @font-face {
+      font-family: 'main_semibold';
+      src:url(../fonts/SVN-Poppins-SemiBold.ttf);
+    }
+    
+    @font-face {
+      font-family: 'main_medium';
+      src:url(../fonts/SVN-Poppins-Medium.ttf);
+    }
+    
+    @font-face {
+      font-family: 'main_regular';
+      src:url(../fonts/SVN-Poppins-Regular.ttf);
+    }
+    
